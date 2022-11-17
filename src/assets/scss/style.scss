@@ -1,0 +1,26 @@
+/* Fonts: Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+/* font-family: 'Poppins', sans-serif; */
+
+// Cores
+@import "./cores/Variables";
+@import "./cores/Base";
+@import "./cores/Buttons";
+@import "./cores/Utilities";
+
+//Sections
+@import "./sections/MainMenuSection"; 
+@import "./sections/ProductGridSection"; 
+@import "./sections/ProductGridSection2"; 
+@import "./sections//FooterSection";
+@import "./components/Breadcrumbs";
+@import "./sections/MapSection";
+@import "./sections/ContactFormSection";
+@import "./sections/Hero";
+@import "./sections/BuyInfoSection";
+@import "./sections/TopicsSection";
+@import "./sections/ProductSection1";
+@import "./sections/ProductSection2";
+
+//Views
+@import "./views/NotFound";

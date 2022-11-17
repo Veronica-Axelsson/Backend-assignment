@@ -1,0 +1,43 @@
+
+html, body {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+a {
+    color: $color-theme;
+    text-decoration: none;
+
+    &:hover {
+        color: $color-theme;
+        text-decoration: underline;
+    }
+}
+
+.border {
+    border: 1px solid red !important;
+}
+
+input {
+    border: 1px solid $color-lightgray !important;
+}
+
+.bg-theme {
+    background-color: $color-theme;
+}
+
+.bg-dark {
+    background-color: $color-dark !important;
+}
+
+@media (min-width:1600px) {
+    .container {
+        max-width: $max-width;
+    }
+}
+
+.headerBG {
+    background: rgb(230,230,230);
+    background: linear-gradient(90deg, rgba(230,230,230,1) 0%, rgba(245,245,245,1) 100%);
+}

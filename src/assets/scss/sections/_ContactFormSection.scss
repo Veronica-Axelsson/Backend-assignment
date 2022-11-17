@@ -1,0 +1,74 @@
+/* formContact ----------------------*/
+.contact-form {
+    font-weight: $font-weight-regular;
+    margin-bottom: 110px;
+
+    .container{
+        max-width: 1110px;
+    }
+
+    h2 {
+        font-size: $font-size-18;
+        font-weight: $font-weight-bold;
+        margin-bottom: 30px;
+    }
+
+    .formContact {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 40px;
+    
+        input {
+            height: 50px;
+            width: 100%;
+            padding: 18px 20px;
+            border: 1px solid rgba(112,112,112, 0.4);
+        }
+
+        .textarea  {
+            grid-column: 1 / -1;
+        }
+
+            .textarea textarea {
+                min-height: 140px;
+                width: 100%;
+                padding: 18px 20px;
+                border: 1px solid rgba(112,112,112, 0.4);
+                resize: none;
+            }
+
+        .error {
+            color: $color-theme;
+            border: 1px solid red !important;
+            outline-color: red !important;
+
+        }
+
+        .errorMessage {
+            margin-top: 5px;
+            color: $color-theme;
+            font-size: 0.8;  
+        }
+
+        .button {
+            width: 210px;
+            height: 50px;
+            padding: 0px 0px;
+            border: none;
+
+            &:hover {
+                color: $color-white !important;
+                background-color: $color-dark;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .contact-form {
+        .formContact {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+}

@@ -1,0 +1,57 @@
+@media (max-width: 576px) {
+    .notFoundView {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin-top: 3rem;
+
+        .notFound {
+            font-size: 10rem;
+            margin-bottom: 3rem;
+
+            h1 {
+                margin-top: 0;
+                font-size: 2rem;
+                margin-bottom: 1rem;
+            }
+        }
+    }
+}
+
+@media (min-width: 577px) {
+    .notFoundView {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+    text-align: center;
+    margin: 10rem auto auto auto;
+
+        .notFound {
+            font-size: 15rem;
+            margin-bottom: 10rem;
+
+            h1 {
+                margin-top: 1rem;
+                font-size: 4rem;
+            }
+        }
+    }
+}
+
+@media (min-width: 990px) {
+    .notFoundView {
+      
+        .notFound {
+            margin-top: 0;
+            margin-bottom: 15rem;
+
+            h1 {
+                margin-top: 1rem;
+                font-size: 4rem;
+            }
+        }
+    }
+}
+

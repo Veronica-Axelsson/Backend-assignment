@@ -1,0 +1,36 @@
+/* pageMenu -------------------------*/
+.pageMenu {
+
+    .container {
+        max-width: 1110px;
+    }
+
+    .pageMenu-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        color: $color-theme;
+
+        li {
+            display: inline-block;
+            font-weight: 500;
+        
+            a {
+                color: $color-dark;
+                transition: 0.15s ease-in-out;
+                text-decoration: none;
+
+                &:hover {
+                    color: $color-theme;
+                    text-decoration: underline;
+                }
+            }
+
+            & + li:before {
+                content: "\00a0\00a0>\00a0\00a0";
+                font-weight: 400;
+                color: $black-color;
+            }
+        }
+    }
+}
