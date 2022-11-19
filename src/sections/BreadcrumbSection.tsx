@@ -3,13 +3,14 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 
-const BreadcrumbSection = ({currentPage}) => {
+// {currentPage}
+const BreadcrumbSection: React.FC = () => {
   return (
     <section className="pageMenu">
         <div className="container">
             <ul className="breadcrumb-list pageMenu-list">
                 <li><NavLink to="/">Home</NavLink></li>
-                <li>{currentPage}</li> 
+                {/* <li>{currentPage}</li>  */}
             </ul>
         </div>
     </section>
@@ -17,3 +18,6 @@ const BreadcrumbSection = ({currentPage}) => {
 }
 
 export default BreadcrumbSection
+
+
+

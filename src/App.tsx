@@ -14,8 +14,7 @@ import ShoppingCartView from './Pages/ShoppingCartPage';
 import NotFoundView from './Pages/NotFoundPage';
 import {ProductContext, FeaturedProductsContext, ProductSection1Context} from './contexts/contexts';
 
-
-function App() {
+const App: React.FC = () => {
   const [products, setProducts] = useState([])
   const [featured, setFeatured] = useState([])
   const [productSection1, setProductSection1] = useState([])

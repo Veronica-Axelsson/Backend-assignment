@@ -6,7 +6,7 @@ import Models7 from '../assets/images/Models/Models7.png'
 import ProductGridSection2 from '../sections/ProductGridSection2'
 import { ProductSection1Context } from '../contexts/contexts'
 
-const ProductSection1 = () => {
+const ProductSection1: React.FC = () => {
 
 const products = useContext(ProductSection1Context);
 
@@ -31,7 +31,7 @@ const products = useContext(ProductSection1Context);
 
           {/* Right side - Products --------------------------------------------------------*/}
           <div className="productsSize">
-            <ProductGridSection2 items={products} />
+            <ProductGridSection2 items={products} title={undefined} />
           </div>
         </div>
       </div>

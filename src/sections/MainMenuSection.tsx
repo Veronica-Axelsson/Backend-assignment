@@ -4,7 +4,7 @@ import React, {useState} from 'react'
 import { NavLink } from 'react-router-dom'
 import MenuIcon from '../components/MenuIcon'
 
-const MainMenuSection = () => {
+const MainMenuSection: React.FC = () => {
   const [showMenu, setShowMenu] = useState(false)
 
   const toggleMenu = () => {
@@ -27,10 +27,10 @@ const MainMenuSection = () => {
 
         {/* Right round icons menu ---------------------------------------------------------------------------------------------------*/}
         <div className="menuIcons">
-            <MenuIcon link="/search" icon="fa-regular fa-magnifying-glass" />
-            <MenuIcon hideOnMobile={true} link="/compare" icon="fa-regular fa-code-compare" />
+            <MenuIcon link="/search" icon="fa-regular fa-magnifying-glass" quantity={undefined} hideOnMobile={undefined} />
+            <MenuIcon hideOnMobile={true} link="/compare" icon="fa-regular fa-code-compare" quantity={undefined} />
             <MenuIcon hideOnMobile={true} quantity="1" link="/wishlist" icon="fa-regular fa-heart" />
-            <MenuIcon quantity="3" link="/shoppingcart" icon="fa-regular fa-bag-shopping" />
+            <MenuIcon quantity="3" link="/shoppingcart" icon="fa-regular fa-bag-shopping" hideOnMobile={undefined} />
 
         {/* Mobile toggle menu -------------------------------------------------------------------------------------------------------*/}
             <button onClick={toggleMenu} className="d-lg-none d-xl-none menuIcon btn-menuIcon"><i className="fa-regular fa-bars"></i></button>

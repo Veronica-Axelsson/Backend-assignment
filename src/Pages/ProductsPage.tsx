@@ -7,21 +7,23 @@ import ProductGridSection from '../sections/ProductGridSection'
 import FooterSection from '../sections/FooterSection'
 import {ProductContext} from '../contexts/contexts'
 
-const ProductsPage = () => {
+const ProductsPage: React.FC = () => {
 //   window.top.document.title = 'Products - Fixxo.'
 
   const products = useContext(ProductContext);
 
   return (
     <>
-      <MainMenuSection/>
-      <BreadcrumbSection currentPage="Products"/>
+      <MainMenuSection />
+      <BreadcrumbSection />
       <div className="mt-4 pt-2">
         <ProductGridSection  title="Products" items={products} />
       </div>
-      <FooterSection/>
+      <FooterSection />
     </>
   )
 }
 
 export default ProductsPage
+
+//  <BreadcrumbSection currentPage="Products"/>

@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom'
 import Models5 from '../assets/images/Models/Models5.png'
 import Models6 from '../assets/images/Models/Models6.png'
 
-const TopicsSection = () => {
+const TopicsSection: React.FC = () => {
   return (
     <section className="topicsSection">
         <div className="container">

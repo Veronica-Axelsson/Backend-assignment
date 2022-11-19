@@ -4,7 +4,7 @@ import React from 'react'
 import FooterSection from '../sections/FooterSection'
 import MainMenuSection from '../sections/MainMenuSection'
 
-const NotFoundPage = () => {
+const NotFoundPage: React.FC = () => {
 //   window.top.document.title = 'Page not found - Fixxo.'
 
   return (

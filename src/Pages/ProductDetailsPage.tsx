@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom'
 import MainMenuSection from '../sections/MainMenuSection'
 import FooterSection from '../sections/FooterSection'
 
-const ProductDetailsPage = () => {
+const ProductDetailsPage: React.FC = () => {
 //   window.top.document.title = 'Products - Fixxo.'
 
     const params = useParams()

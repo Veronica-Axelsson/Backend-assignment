@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom'
 import Hero1 from '../assets/images/Hero/hero1.png'
 import Hero2 from '../assets/images/Hero/hero2.png'
 
-const hero = () => {
+const hero: React.FC = () => {
   return (
     <section className="hero container">
 

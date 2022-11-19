@@ -6,7 +6,7 @@ import Models8 from '../assets/images/Models/Models8.png'
 import ProductGridSection2 from './ProductGridSection2'
 import { ProductSection1Context } from '../contexts/contexts'
 
-const ProductSection2 = () => {
+const ProductSection2: React.FC = () => {
 
   const products = useContext(ProductSection1Context);
 
@@ -20,7 +20,7 @@ const ProductSection2 = () => {
             <div className='fullwidth'>
               <div className="colWidth">
                 <div className="productsSize">
-                  <ProductGridSection2 items={products} />
+                  <ProductGridSection2 items={products} title={undefined} />
                 </div>
               </div>
             </div>

@@ -6,7 +6,7 @@ import icon1 from '../assets/images/icons/shopInfoIcons1.svg'
 import icon2 from '../assets/images/icons/shopInfoIcons2.svg'
 import icon3 from '../assets/images/icons/shopInfoIcons3.svg'
 
-const BuyInfoSection = () => {
+const BuyInfoSection: React.FC = () => {
   return (
     <>
       <section className="buyInfoSection">

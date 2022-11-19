@@ -11,7 +11,7 @@ import BuyInfoSection from '../sections/BuyInfoSection'
 import { FeaturedProductsContext } from '../contexts/contexts'
 import FooterSection from '../sections/FooterSection'
 
-const HomePage = () => {
+const HomePage: React.FC = () => {
 //   window.top.document.title = 'Fixxo.'
 
   const products = useContext(FeaturedProductsContext);

@@ -7,20 +7,22 @@ import MapSection from '../sections/MapSection'
 import ContactFormSection from '../sections/ContactFormSection'
 import FooterSection from '../sections/FooterSection'
 
-const ContactsPage = () => {
+const ContactsPage: React.FC = () => {
     // window.top.document.title = 'Contacts - Fixxo.'
 
   return (
     <>
-    <MainMenuSection/>
-    <BreadcrumbSection currentPage="Contacts"/>
+    <MainMenuSection />
+    <BreadcrumbSection />
     <div className="map">
-        <MapSection/>
+        <MapSection />
     </div>
     <ContactFormSection />
-    <FooterSection/>
+    <FooterSection />
     </>
   )
 }
 
 export default ContactsPage
+
+//     <BreadcrumbSection currentPage="Contacts"/>
