@@ -4,7 +4,7 @@ import React, { useContext }  from 'react'
 import {Link} from 'react-router-dom'
 import Models8 from '../assets/images/Models/Models8.png'
 import ProductGridSection2 from './ProductGridSection2'
-import { ProductSection1Context } from '../contexts/contexts'
+import { ProductSection1Context } from '../Temp-delete-later/contexts'
 
 const ProductSection2: React.FC = () => {
 

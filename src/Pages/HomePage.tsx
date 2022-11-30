@@ -1,6 +1,6 @@
 // Home page
 
-import React, { useContext } from 'react'
+import React, { useEffect } from 'react'
 import MainMenuSection from '../sections/MainMenuSection'
 import Hero from '../sections/Hero'
 import ProductGridSection from '../sections/ProductGridSection'
@@ -8,13 +8,18 @@ import TopicsSection from '../sections/TopicsSection'
 import ProductSection1 from '../sections/ProductSection1'
 import ProductSection2 from '../sections/ProductSection2'
 import BuyInfoSection from '../sections/BuyInfoSection'
-import { FeaturedProductsContext } from '../contexts/contexts'
 import FooterSection from '../sections/FooterSection'
+import { useProductContext } from '../contexts/ProductContext'
 
 const HomePage: React.FC = () => {
 //   window.top.document.title = 'Fixxo.'
 
-  const products = useContext(FeaturedProductsContext);
+  const {featuredProducts, getFeaturedProducts} = useProductContext()
+
+  useEffect(() => {
+    getFeaturedProducts(8)
+  }, [getFeaturedProducts])
+  
 
   return (
     <>
@@ -22,7 +27,7 @@ const HomePage: React.FC = () => {
       <MainMenuSection/>
       <Hero/>
     </header>
-    <ProductGridSection title="Featured Products" items={products} />
+    <ProductGridSection title="Featured Products" items={featuredProducts} />
     <TopicsSection />
     <ProductSection1 />
     <ProductSection2 />

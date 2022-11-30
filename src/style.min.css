@@ -267,6 +267,9 @@ input {
   border: none;
   outline: none;
 }
+.mainMenu .menuIcons button {
+  border: none;
+}
 
 @media (min-width: 992px) {
   .mainMenu {
@@ -553,6 +556,91 @@ footer .socialmedia a:hover {
   color: #000;
 }
 
+.shoppingcart {
+  width: 100% !important;
+}
+.shoppingcart .offcanvas-title {
+  color: #222529;
+  font-weight: 800;
+  margin-left: 23px;
+  margin-top: 10px;
+}
+.shoppingcart .offcanvas-title span {
+  margin-left: 20px;
+}
+.shoppingcart .shoppingcart-item {
+  margin: 30px 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.shoppingcart .shoppingcart-item .item-image {
+  height: 65px;
+  width: 65px;
+  margin-right: 20px;
+  background-color: rgba(112, 112, 112, 0.4);
+}
+.shoppingcart .shoppingcart-item .item-image img {
+  height: 65px;
+  width: 65px;
+}
+.shoppingcart .shoppingcart-item .item-info {
+  flex: 3;
+}
+.shoppingcart .shoppingcart-item .item-info .item-info-name {
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.shoppingcart .shoppingcart-item .item-info .item-info-quantity-box {
+  display: inline-block;
+  border-radius: 10px;
+}
+.shoppingcart .shoppingcart-item .item-info .item-info-quantity-box span {
+  padding: 0 15px;
+}
+.shoppingcart .shoppingcart-item .item-info .item-info-quantity-box button {
+  height: 30px;
+  width: 30px;
+  background-color: white;
+  border: none;
+  border-radius: 25px;
+  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.06);
+  transition: 0.15s ease-in-out;
+}
+.shoppingcart .shoppingcart-item .item-info .item-info-quantity-box button:hover {
+  color: #fff;
+  background-color: #FF7373;
+  text-decoration: none;
+  box-shadow: 0 0 6px 4px rgba(0, 0, 0, 0.06);
+}
+.shoppingcart .shoppingcart-item .item-price {
+  font-weight: 700;
+}
+.shoppingcart .shoppingcart-item .item-price button {
+  font-size: 11px;
+  margin-top: 9px;
+  height: 30px;
+  width: 30px;
+  background-color: white;
+  border: none;
+  border-radius: 25px;
+  transition: 0.15s ease-in-out;
+}
+.shoppingcart .shoppingcart-item .item-price button span {
+  color: #616365;
+}
+.shoppingcart .shoppingcart-item .item-price button:hover {
+  color: #fff;
+  background-color: #FF7373;
+  text-decoration: none;
+  box-shadow: 0 0 6px 4px rgba(0, 0, 0, 0.06);
+}
+
+@media (min-width: 1200px) {
+  .shoppingcart {
+    width: 500px !important;
+  }
+}
 /* Map ------------------------------*/
 .map {
   width: 100%;

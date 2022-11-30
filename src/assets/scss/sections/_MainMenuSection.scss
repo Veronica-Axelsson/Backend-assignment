@@ -69,7 +69,6 @@
                 background-color: $color-theme;
                 text-decoration: none;
                 box-shadow: 0 0 6px 4px $color-shadow;
-
             }
         }
 
@@ -87,6 +86,10 @@
             transition: 0.15s ease-in-out;
             border: none;
             outline: none;
+        }
+
+        button {
+            border: none;
         }
     }
 }

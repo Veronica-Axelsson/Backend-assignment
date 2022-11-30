@@ -1,0 +1,109 @@
+.shoppingcart {
+    width: 100% !important;
+
+    .offcanvas-title {
+        color: $color-dark;
+        font-weight: 800;
+        margin-left: 23px;
+        margin-top: 10px;
+
+        span {
+            margin-left: 20px;
+        }
+    }
+
+    .shoppingcart-item {
+        margin: 30px 20px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+        .item-image {
+            height: 65px;
+            width: 65px;
+            margin-right: 20px;
+            background-color: $color-lightgray;
+
+            img {
+                height: 65px;
+                width: 65px;
+            }
+        }
+
+        .item-info {
+            flex: 3;
+
+            .item-info-name {
+                font-weight: 700;
+                margin-bottom: 8px;
+            }
+
+            .item-info-quantity-box {
+                display: inline-block;
+                border-radius: 10px;
+
+                span {
+                    padding: 0 15px;
+      
+                }
+
+                button {
+                    height: 30px;
+                    width: 30px;
+                    background-color: white;
+                    border: none;
+                    border-radius: 25px;
+                    box-shadow: 0 0 5px 5px $color-shadow;
+                    transition: 0.15s ease-in-out;
+
+
+                    &:hover {
+                        color: $color-white;
+                        background-color: $color-theme;
+                        text-decoration: none;
+                        box-shadow: 0 0 6px 4px $color-shadow;
+                    }
+                }
+            }
+        }
+
+        .item-price {
+            
+            font-weight: 700;
+
+            button {
+                font-size: 11px;
+                margin-top: 9px;
+                height: 30px;
+                width: 30px;
+                background-color: white;
+                border: none;
+                border-radius: 25px;
+                // box-shadow: 0 0 5px 5px $color-shadow;
+                transition: 0.15s ease-in-out;
+                
+
+                span {
+                    color: $color-darkgray;
+                }
+
+
+                &:hover {
+                    color: $color-white;
+                    background-color: $color-theme;
+                    text-decoration: none;
+                    box-shadow: 0 0 6px 4px $color-shadow;
+                }
+                
+
+            }
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    .shoppingcart {
+        width: 500px !important;
+    }
+
+}

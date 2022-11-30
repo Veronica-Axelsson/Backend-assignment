@@ -2,17 +2,11 @@
 
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import { useShoppingCart } from '../contexts/ShoppingCartContext'
+import { currencyFormater } from '../utilities/currencyFormatter'
 
 const ProductCard = ({item}) => {
-
-    const addToWishList = (e) => {
-    }
-
-    const addToCompare = (e) => {
-    }
-
-    const addToCart = (e) => {
-    }
+    const { incrementQuantity } = useShoppingCart()
 
   return (
         <div className="col ">
@@ -24,9 +18,9 @@ const ProductCard = ({item}) => {
                     <div className="d-xl-none card-menu ">
                         
                     {/* Mini menu on product images -----------------------------------------------------------------------------------*/}
-                        <button onClick={addToWishList} className="menu-link"><i className="fa-regular fa-heart"></i></button>
-                        <button onClick={addToCompare} className="menu-link"><i className="fa-regular fa-repeat"></i></button>
-                        <button onClick={addToCart} className="menu-link"><i className="fa-regular fa-bag-shopping"></i></button>
+                        <button className="menu-link"><i className="fa-regular fa-heart"></i></button>
+                        <button className="menu-link"><i className="fa-regular fa-repeat"></i></button>
+                        <button onClick={() => incrementQuantity({articleNumber: item.articleNumber, product: item})} className="menu-link"><i className="fa-regular fa-bag-shopping"></i></button>
                     </div>
 
                     {/* Quick view button on product image ----------------------------------------------------------------------------*/}
@@ -48,7 +42,8 @@ const ProductCard = ({item}) => {
                         <i className="__star fa-sharp fa-solid fa-star"></i>
                         <i className="__star fa-sharp fa-solid fa-star"></i>
                     </p>
-                    <p className="card-price">${item.price}</p>
+                    <p className="card-price">{currencyFormater(item.price)}</p>
+                    
                 </div>
             </div>
         </div>

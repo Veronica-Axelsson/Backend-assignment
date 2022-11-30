@@ -2,10 +2,12 @@
 
 import React, {useState} from 'react'
 import { NavLink } from 'react-router-dom'
-import MenuIcon from '../components/MenuIcon'
+import { useShoppingCart } from '../contexts/ShoppingCartContext' 
+
 
 const MainMenuSection: React.FC = () => {
   const [showMenu, setShowMenu] = useState(false)
+  const { cartQuantity } = useShoppingCart()
 
   const toggleMenu = () => {
     setShowMenu(!showMenu)
@@ -27,16 +29,39 @@ const MainMenuSection: React.FC = () => {
 
         {/* Right round icons menu ---------------------------------------------------------------------------------------------------*/}
         <div className="menuIcons">
-            <MenuIcon link="/search" icon="fa-regular fa-magnifying-glass" quantity={undefined} hideOnMobile={undefined} />
-            <MenuIcon hideOnMobile={true} link="/compare" icon="fa-regular fa-code-compare" quantity={undefined} />
-            <MenuIcon hideOnMobile={true} quantity="1" link="/wishlist" icon="fa-regular fa-heart" />
-            <MenuIcon quantity="3" link="/shoppingcart" icon="fa-regular fa-bag-shopping" hideOnMobile={undefined} />
+          <NavLink to="/search" end className="menuIcon">
+            <i className="fa-regular fa-magnifying-glass"></i>
+          </NavLink>
+
+          <NavLink to="/compare" end className="menuIcon d-none d-md-flex">
+            <i className="fa-regular fa-code-compare"></i>
+          </NavLink>
+
+          <NavLink to="/wishlist" end className="menuIcon d-none d-md-flex">
+            <i className="fa-regular fa-heart"></i>
+          </NavLink>
+
+          <button className="menuIcon" type="button" data-bs-toggle="offcanvas" data-bs-target="#shoppingCart" aria-controls="shoppingCart">
+            <span className='position-absolute top-0 start-100 translate-middle badge rounded-pill bg-theme'>{cartQuantity}</span>
+            <i className="fa-regular fa-bag-shopping"></i></button>
+
+          {/* <NavLink to="/shoppingcart" end className="menuIcon">
+            <i className="fa-regular fa-bag-shopping"></i>
+          </NavLink> */}
+
 
         {/* Mobile toggle menu -------------------------------------------------------------------------------------------------------*/}
-            <button onClick={toggleMenu} className="d-lg-none d-xl-none menuIcon btn-menuIcon"><i className="fa-regular fa-bars"></i></button>
+            <button onClick={toggleMenu} className="d-lg-none d-xl-none menuIcon btn-menuIcon">
+              <i className="fa-regular fa-bars"></i>
+            </button>
         </div>
     </nav>
   )
 }
 
+
+
 export default MainMenuSection
+
+
+

@@ -13,7 +13,7 @@ const ContactsPage: React.FC = () => {
   return (
     <>
     <MainMenuSection />
-    <BreadcrumbSection />
+    <BreadcrumbSection currentPage="Contacts"/>
     <div className="map">
         <MapSection />
     </div>
