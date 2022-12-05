@@ -5,11 +5,11 @@ import MainMenuSection from '../sections/MainMenuSection'
 import BreadcrumbSection from '../sections/BreadcrumbSection'
 import ProductGridSection from '../sections/ProductGridSection'
 import FooterSection from '../sections/FooterSection'
-import { useProductContext} from '../contexts/ProductContext'
+import { ProductContextType, useProductContext} from '../contexts/ProductContext'
+
 
 const ProductsPage: React.FC = () => {
-//   window.top.document.title = 'Products - Fixxo.'
-  const {products, getProducts} = useProductContext()
+  const {products, getProducts} = useProductContext() as ProductContextType
 
   useEffect(() => {
     getProducts()

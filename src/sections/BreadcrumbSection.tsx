@@ -8,8 +8,6 @@ interface BreadcrumbType {
   parentPage?: string
 }
 
-
-// {currentPage}
 const BreadcrumbSection: React.FC<BreadcrumbType> = ({currentPage, parentPage}) => {
   return (
     <section className="pageMenu">

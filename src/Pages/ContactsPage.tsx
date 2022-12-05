@@ -8,7 +8,6 @@ import ContactFormSection from '../sections/ContactFormSection'
 import FooterSection from '../sections/FooterSection'
 
 const ContactsPage: React.FC = () => {
-    // window.top.document.title = 'Contacts - Fixxo.'
 
   return (
     <>
@@ -17,12 +16,10 @@ const ContactsPage: React.FC = () => {
     <div className="map">
         <MapSection />
     </div>
-    <ContactFormSection />
+    <ContactFormSection name={''} email={''} comments={''} />
     <FooterSection />
     </>
   )
 }
 
 export default ContactsPage
-
-//     <BreadcrumbSection currentPage="Contacts"/>

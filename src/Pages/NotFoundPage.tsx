@@ -3,9 +3,9 @@
 import React from 'react'
 import FooterSection from '../sections/FooterSection'
 import MainMenuSection from '../sections/MainMenuSection'
+import NotFoundImage from '../assets/images/icons/icon1Support.svg'
 
 const NotFoundPage: React.FC = () => {
-//   window.top.document.title = 'Page not found - Fixxo.'
 
   return (
     <>

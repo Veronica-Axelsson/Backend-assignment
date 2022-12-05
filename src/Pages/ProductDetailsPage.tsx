@@ -4,25 +4,24 @@ import React, { useEffect} from 'react'
 import { useParams } from 'react-router-dom'
 import MainMenuSection from '../sections/MainMenuSection'
 import FooterSection from '../sections/FooterSection'
-import { useProductContext } from '../contexts/ProductContext'
+import { ProductContextType, useProductContext } from '../contexts/ProductContext'
 import BreadcrumbSection from '../sections/BreadcrumbSection'
 import ProductDetails from '../sections/ProductDetails'
 
 const ProductDetailsPage: React.FC = () => {
-//   window.top.document.title = 'Products - Fixxo.'
-  const {id} = useParams()
-  const {product, getProduct} = useProductContext()
+  const {id} = useParams<string>()
+  const ProductContext = useProductContext() as ProductContextType
   
   useEffect(() => {
-    getProduct(id)
-  }, [id, getProduct])
+    ProductContext.getProduct(id)
+  }, [ProductContext, id])
     
 
   return (
     <>
     <MainMenuSection/>
-    <BreadcrumbSection parentPage='Products' currentPage={product.name} />
-    <ProductDetails  item={product} />
+    <BreadcrumbSection parentPage='Products' currentPage={ProductContext.product.name} />
+    <ProductDetails  item={ProductContext.product} />
     <FooterSection/>
   </>
   )

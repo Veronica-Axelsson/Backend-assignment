@@ -3,7 +3,12 @@
 import React from 'react'
 // import { NavLink } from 'react-router-dom'
 
-const ExternalLinkIcon = ({link, icon}) => {
+interface ExternalLinkIconType {
+  link: string
+  icon: string
+}
+
+const ExternalLinkIcon: React.FC<ExternalLinkIconType> = ({link, icon}) => {
   return (
     <a href={link} target="blank"> 
         <i className={icon}></i>

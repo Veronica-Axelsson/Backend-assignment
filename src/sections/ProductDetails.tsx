@@ -1,6 +1,11 @@
 import React from 'react'
+import { ProductItem } from '../models/ProductModel'
 
-const ProductDetails = ({item}) => {
+interface ProductDetailsType {
+  item: ProductItem
+}
+
+const ProductDetails: React.FC<ProductDetailsType> = ({item}) => {
   return (
     <section className='product-details'>
         <div className='container'>

@@ -2,11 +2,20 @@
 
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import { useShoppingCart } from '../contexts/ShoppingCartContext'
+// import { useShoppingCartContext } from '../contexts/ShoppingCartContext'
+import { ShoppingCartContextType, useShoppingCartContext } from '../contexts/ShoppingCartContext'
+
+import { ProductItem } from '../models/ProductModel'
 import { currencyFormater } from '../utilities/currencyFormatter'
 
-const ProductCard = ({item}) => {
-    const { incrementQuantity } = useShoppingCart()
+interface ProductCardType {
+    item: ProductItem
+  }
+
+const ProductCard: React.FC<ProductCardType> = ({item}) => {
+    const { incrementQuantity } = useShoppingCartContext() as ShoppingCartContextType
+
+
 
   return (
         <div className="col ">
@@ -20,7 +29,7 @@ const ProductCard = ({item}) => {
                     {/* Mini menu on product images -----------------------------------------------------------------------------------*/}
                         <button className="menu-link"><i className="fa-regular fa-heart"></i></button>
                         <button className="menu-link"><i className="fa-regular fa-repeat"></i></button>
-                        <button onClick={() => incrementQuantity({articleNumber: item.articleNumber, product: item})} className="menu-link"><i className="fa-regular fa-bag-shopping"></i></button>
+                        <button onClick={() => incrementQuantity({articleNumber: item.articleNumber, product: item, quantity: 0})} className="menu-link"><i className="fa-regular fa-bag-shopping"></i></button>
                     </div>
 
                     {/* Quick view button on product image ----------------------------------------------------------------------------*/}

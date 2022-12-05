@@ -1,14 +1,18 @@
 // Big image and 4 products for home view.
 
-import React, { useContext }  from 'react'
+import React, { useEffect } from 'react'
 import {Link} from 'react-router-dom'
 import Models7 from '../assets/images/Models/Models7.png'
-import ProductGridSection2 from '../sections/ProductGridSection2'
-import { ProductSection1Context } from '../Temp-delete-later/contexts'
+import ProductGridSection2 from './ProductGridSection2'
+import { ProductContextType, useProductContext } from '../contexts/ProductContext'
 
 const ProductSection1: React.FC = () => {
 
-const products = useContext(ProductSection1Context);
+const {productSection1, getProductSection1} = useProductContext() as ProductContextType
+
+useEffect(() => {
+  getProductSection1(4)
+}, [])
 
   return (
     <section className="productSection1">
@@ -31,7 +35,7 @@ const products = useContext(ProductSection1Context);
 
           {/* Right side - Products --------------------------------------------------------*/}
           <div className="productsSize">
-            <ProductGridSection2 items={products} title={undefined} />
+            <ProductGridSection2 title="" items={productSection1} />
           </div>
         </div>
       </div>
@@ -40,3 +44,7 @@ const products = useContext(ProductSection1Context);
 }
 
 export default ProductSection1
+// function useEffect(arg0: () => void, arg1: never[]) {
+//   throw new Error('Function not implemented.')
+// }
+

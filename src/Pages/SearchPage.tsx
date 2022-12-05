@@ -5,8 +5,7 @@ import MainMenuSection from '../sections/MainMenuSection'
 import FooterSection from '../sections/FooterSection'
 
 const Search: React.FC = () => {
-//   window.top.document.title = 'Search - Fixxo.'
-
+  
   return (
     <>
       <MainMenuSection/>

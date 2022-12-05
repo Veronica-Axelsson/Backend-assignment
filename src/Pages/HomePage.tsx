@@ -9,16 +9,15 @@ import ProductSection1 from '../sections/ProductSection1'
 import ProductSection2 from '../sections/ProductSection2'
 import BuyInfoSection from '../sections/BuyInfoSection'
 import FooterSection from '../sections/FooterSection'
-import { useProductContext } from '../contexts/ProductContext'
+import { ProductContextType, useProductContext } from '../contexts/ProductContext'
 
 const HomePage: React.FC = () => {
-//   window.top.document.title = 'Fixxo.'
 
-  const {featuredProducts, getFeaturedProducts} = useProductContext()
+  const {featuredProducts, getFeaturedProducts} = useProductContext() as ProductContextType
 
   useEffect(() => {
     getFeaturedProducts(8)
-  }, [getFeaturedProducts])
+  }, [])
   
 
   return (

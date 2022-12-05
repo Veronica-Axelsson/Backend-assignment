@@ -1,14 +1,18 @@
 // 4 products and big image for home view.
 
-import React, { useContext }  from 'react'
+import React, { useEffect } from 'react'
 import {Link} from 'react-router-dom'
 import Models8 from '../assets/images/Models/Models8.png'
 import ProductGridSection2 from './ProductGridSection2'
-import { ProductSection1Context } from '../Temp-delete-later/contexts'
+import { ProductContextType, useProductContext } from '../contexts/ProductContext'
 
 const ProductSection2: React.FC = () => {
 
-  const products = useContext(ProductSection1Context);
+  const {productSection2, getProductSection2} = useProductContext() as ProductContextType
+
+  useEffect(() => {
+    getProductSection2(4)
+  }, [])
 
   return (
     <section className="productSection2">
@@ -20,7 +24,7 @@ const ProductSection2: React.FC = () => {
             <div className='fullwidth'>
               <div className="colWidth">
                 <div className="productsSize">
-                  <ProductGridSection2 items={products} title={undefined} />
+                  <ProductGridSection2 title="" items={productSection2} />
                 </div>
               </div>
             </div>
