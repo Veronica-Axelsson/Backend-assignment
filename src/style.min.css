@@ -47,6 +47,13 @@ input {
   background: linear-gradient(90deg, rgb(230, 230, 230) 0%, rgb(245, 245, 245) 100%);
 }
 
+.cardBoxBG {
+  background-color: grey;
+  color: red;
+  width: 255px;
+  height: 210px;
+}
+
 .btn-theme {
   position: relative;
   width: 100%;

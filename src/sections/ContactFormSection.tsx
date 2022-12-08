@@ -3,7 +3,7 @@
 // import { stringify } from 'querystring'
 import React, {useState} from 'react'
 import AlertNotification from '../components/AlertNotification'
-import { submitData, validateComments, validateEmail, validateName} from '../utilities/validation'
+import { validateComments, validateEmail, validateName} from '../utilities/validation'
 
 interface FormDataType {
     name:string
@@ -55,11 +55,11 @@ const ContactFormSection: React.FC<FormDataType> = () => {
         if (formData.name !== '' && formData.email !== '' && formData.comments !== '') {
             
 
-                let json = JSON.stringify({
-                    name: formData.name, 
-                    email: formData.email, 
-                    comments: formData.comments
-                })
+                // let json = JSON.stringify({
+                //     name: formData.name, 
+                //     email: formData.email, 
+                //     comments: formData.comments
+                // })
             
 
                 const result = await fetch('https://win22-webapi.azurewebsites.net/api/contactform', {
@@ -67,7 +67,7 @@ const ContactFormSection: React.FC<FormDataType> = () => {
                     headers: {
                         'Content-Type': 'application/json'
                     },
-                    body: json
+                    body: JSON.stringify(formData)
                 })
 
 

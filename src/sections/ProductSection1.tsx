@@ -11,7 +11,7 @@ const ProductSection1: React.FC = () => {
 const {productSection1, getProductSection1} = useProductContext() as ProductContextType
 
 useEffect(() => {
-  getProductSection1(4)
+  getProductSection1(2)
 }, [])
 
   return (
@@ -44,7 +44,3 @@ useEffect(() => {
 }
 
 export default ProductSection1
-// function useEffect(arg0: () => void, arg1: never[]) {
-//   throw new Error('Function not implemented.')
-// }
-

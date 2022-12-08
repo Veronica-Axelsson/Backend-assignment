@@ -10,8 +10,9 @@ const ProductDetails: React.FC<ProductDetailsType> = ({item}) => {
     <section className='product-details'>
         <div className='container'>
             <div>
-                <div>{item.name}</div>
-                <img src={item.imageName} alt="product shot"/>
+                <div>Product name: {item.name}</div>
+                <div className='cardBoxBG'></div>
+                <img src={item.imageName} alt="product shot not working"/>
             </div>
         </div>
     </section>

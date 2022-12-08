@@ -11,7 +11,7 @@ interface ProductGridSection2Type {
 
 const ProductGridSection2: React.FC<ProductGridSection2Type> = ({title, items = []}) => {
   return (
-    <section className="product-grid">
+    <section className="product-grid2">
         <div className="container">
             <h1>{title}</h1>
             <div className="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4">
@@ -21,17 +21,6 @@ const ProductGridSection2: React.FC<ProductGridSection2Type> = ({title, items = 
             </div>
         </div>
     </section>
-
-
-
-
-
-
-
-
-
-
-
 
 
 

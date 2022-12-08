@@ -3,16 +3,16 @@
 import React, { useEffect } from 'react'
 import {Link} from 'react-router-dom'
 import Models8 from '../assets/images/Models/Models8.png'
-import ProductGridSection2 from './ProductGridSection2'
-import { ProductContextType, useProductContext } from '../contexts/ProductContext'
+// import ProductGridSection2 from './ProductGridSection2'
+// import { ProductContextType, useProductContext } from '../contexts/ProductContext'
 
 const ProductSection2: React.FC = () => {
 
-  const {productSection2, getProductSection2} = useProductContext() as ProductContextType
+  // const {productSection2, getProductSection2} = useProductContext() as ProductContextType
 
-  useEffect(() => {
-    getProductSection2(4)
-  }, [])
+  // useEffect(() => {
+  //   getProductSection2(4)
+  // }, [])
 
   return (
     <section className="productSection2">
@@ -24,7 +24,7 @@ const ProductSection2: React.FC = () => {
             <div className='fullwidth'>
               <div className="colWidth">
                 <div className="productsSize">
-                  <ProductGridSection2 title="" items={productSection2} />
+                  {/* <ProductGridSection2 title="" items={productSection2} /> */}
                 </div>
               </div>
             </div>
