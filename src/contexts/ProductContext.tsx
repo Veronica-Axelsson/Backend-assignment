@@ -2,6 +2,15 @@ import { useContext, useState } from 'react'
 import { createContext} from 'react'
 import { ProductItem } from '../models/ProductModel'
 
+// const getData = async () => {
+//     const result = await fetch('http://localhost:5000/api/products')
+//     const data = await result.json()
+
+//     console.log(data)
+// }
+
+// getData()
+
 
 interface ProductProviderType {
     children: any
@@ -38,7 +47,7 @@ const ProductProvider: React.FC<ProductProviderType> = ({children}) => {
 
     const getProduct = async (articleNumber?: string) => {
         if (articleNumber !== undefined) {
-            const res = await fetch(`${baseUrl}/details/${articleNumber}`)
+            const res = await fetch(`${baseUrl}/product/details/${articleNumber}`)
             setProduct(await res.json())
         }
     }
@@ -55,7 +64,7 @@ const ProductProvider: React.FC<ProductProviderType> = ({children}) => {
         if (take !== 0)
             url +=  `/${take}`
 
-            console.log(setFeaturedProducts)
+            // console.log(setFeaturedProducts)
 
 
         const res = await fetch(url)
@@ -86,7 +95,7 @@ const ProductProvider: React.FC<ProductProviderType> = ({children}) => {
 
 
   return (
-    <ProductContext.Provider value={{product, products, featuredProducts, productSection1, getProducts,  getFeaturedProducts, getProduct, getProductSection1}}>
+    <ProductContext.Provider value={{product, products, featuredProducts, productSection1, getProduct, getProducts,  getFeaturedProducts, getProductSection1}}>
         {children}
     </ProductContext.Provider>
   )
