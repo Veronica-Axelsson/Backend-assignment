@@ -24,11 +24,11 @@ const ProductList: React.FC<ProductListType> = ({item}) => {
         {
             products.map((product: Product) => (<div onClick={() => remove(product.id)} key={product.id} className='mb-3'> {product.title} {product.description} {product.category} {product.price} {product.rating} </div>))
         }
-        <NavLink to={`/UpdateForms`} className="btn-theme btn-card-theme d-xl-none">
+        {/* <NavLink to={`/UpdateForms`} className="btn-theme btn-card-theme d-xl-none">
             <div className="corner-left"></div>
             <div className="corner-right"></div>
             QUICK VIEW
-        </NavLink>
+        </NavLink> */}
     </>
   )
 }

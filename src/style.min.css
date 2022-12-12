@@ -889,6 +889,10 @@ iframe {
   display: flex;
   margin-top: 5rem;
 }
+.productSection1 .divide2 .divideSection items {
+  margin-top: 3rem;
+  padding-top: 3rem;
+}
 .productSection1 .divide2 .textOnImg {
   max-height: auto;
   position: relative;

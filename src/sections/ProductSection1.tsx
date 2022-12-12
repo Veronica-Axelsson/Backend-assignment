@@ -11,7 +11,7 @@ const ProductSection1: React.FC = () => {
 const {productSection1, getProductSection1} = useProductContext() as ProductContextType
 
 useEffect(() => {
-  getProductSection1(2)
+  getProductSection1()
 }, [])
 
   return (
