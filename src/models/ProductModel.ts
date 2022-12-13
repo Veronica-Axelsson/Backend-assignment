@@ -11,19 +11,23 @@ export interface ProductItem {
 
   // -------------------------------------------------------------------  Använda något av uppe eller nere
   export interface  Product {
+    tag: string | number | readonly string[] | undefined
     id: number
-    title: string
+    name: string
     description: string
     category: string
     price: string
     rating: string
+    imageName : string
 }
 
 export interface  ProductRequest {
+    tag: string | number | readonly string[] | undefined
     // id: number
-    title: string
+    name: string
     description: string
     category: string
     price: string
     rating: string
+    imageName : string
 }

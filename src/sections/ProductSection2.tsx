@@ -9,9 +9,12 @@ import { ProductContextType, useProductContext } from '../contexts/ProductContex
 const ProductSection2: React.FC = () => {
 
   const {productSection2, getProductSection2} = useProductContext() as ProductContextType
+  const {productSection2b, getProductSection2b} = useProductContext() as ProductContextType
+
 
   useEffect(() => {
-    getProductSection2(4)
+    getProductSection2()
+    getProductSection2b()
   }, [])
 
   return (
@@ -21,13 +24,23 @@ const ProductSection2: React.FC = () => {
           <div className="divide2">
             
             {/* Left side - Products ---------------------------------------------------------*/}
-            <div className='fullwidth'>
-              <div className="colWidth">
-                <div className="">
+            {/* <div className='fullwidth'>
+              <div className="colWidth"> */}
+                {/* <div className="">
                   <ProductGridSection2 title="" items={productSection2} />
-                </div>
+                </div> */}
+            <div className="grid2">
+              <div className="productSection2">
+                <ProductGridSection2 title="" items={productSection2} />
               </div>
-            </div>
+
+              <div className="productSection2b">
+                <ProductGridSection2 title="" items={productSection2b} />
+              </div>
+          </div>
+
+              {/* </div>
+            </div> */}
 
             {/* Right side - Big image --------------------------------------------------------*/}
             <div className="textOnImg ">

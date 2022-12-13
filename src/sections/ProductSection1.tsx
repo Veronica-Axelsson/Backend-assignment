@@ -10,8 +10,12 @@ const ProductSection1: React.FC = () => {
 
 const {productSection1, getProductSection1} = useProductContext() as ProductContextType
 
+const {productSection1b, getProductSection1b} = useProductContext() as ProductContextType
+
+
 useEffect(() => {
   getProductSection1()
+  getProductSection1b()
 }, [])
 
   return (
@@ -34,9 +38,16 @@ useEffect(() => {
           </div>
 
           {/* Right side - Products --------------------------------------------------------*/}
-          <div className="productsSize">
-            <ProductGridSection2 title="" items={productSection1} />
+          <div className="grid">
+            <div className="productSection1">
+              <ProductGridSection2 title="" items={productSection1} />
+            </div>
+
+            <div className="productSection1b">
+              <ProductGridSection2 title="" items={productSection1b} />
+            </div>
           </div>
+
         </div>
       </div>
     </section>
