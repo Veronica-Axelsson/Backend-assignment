@@ -995,6 +995,76 @@ iframe {
   padding-right: 2rem;
 }
 
+.listCard {
+  font-size: 0.8rem;
+  text-align: center;
+}
+.listCard .container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: left;
+}
+.listCard .container .listCard-card {
+  display: block;
+  width: 380px;
+  height: auto;
+  padding-bottom: 1rem;
+  border: 1px solid #222529;
+  margin: 1rem;
+}
+.listCard .container .listCard-card img {
+  width: 100%;
+  padding-bottom: 2rem;
+}
+.listCard .container .listCard-card .adjustContent {
+  text-align: left;
+  padding-left: 2rem;
+}
+.listCard .container .listCard-card .btn-theme {
+  margin: 2rem 1rem;
+  width: 40%;
+  text-align: center;
+  font-size: 1rem;
+  background-color: #FF7373;
+  color: #fff;
+  transition: all 0.15s ease-in-out;
+  border: none;
+}
+.listCard .container .listCard-card .btn-theme:hover {
+  background-color: #222529;
+}
+.listCard .container .listCard-card .btn-theme:hover:hover .button-text {
+  color: #fff;
+}
+.listCard .container .listCard-card .btn-theme:hover:hover .corner-top-left {
+  border-left: 2px solid #fff;
+  border-top: 2px solid #fff;
+}
+.listCard .container .listCard-card .btn-theme:hover:hover .corner-bottom-right {
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+}
+
+.createProductForm {
+  padding: 3rem;
+  display: flex;
+  justify-content: center;
+}
+.createProductForm .adjust {
+  width: 50%;
+  text-align: center;
+}
+
+.UpdateForm {
+  font-size: 0.8rem;
+  text-align: center;
+  width: 50%;
+  margin-top: 6rem;
+  align-items: center;
+  justify-content: center;
+}
+
 @media (max-width: 576px) {
   .notFoundView {
     display: flex;

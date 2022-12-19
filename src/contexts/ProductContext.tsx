@@ -2,16 +2,6 @@ import { useContext, useState } from 'react'
 import { createContext} from 'react'
 import { ProductItem } from '../models/ProductModel'
 
-// const getData = async () => {
-//     const result = await fetch('http://localhost:5000/api/products')
-//     const data = await result.json()
-
-//     console.log(data)
-// }
-
-// getData()
-
-
 interface ProductProviderType {
     children: any
 }
@@ -31,7 +21,6 @@ export interface ProductContextType {
     getProductSection1b: (take?: number) => void
     getProductSection2: (take?: number) => void
     getProductSection2b: (take?: number) => void
-
 }
 
 export const ProductContext = createContext<ProductContextType | null>(null)
@@ -59,7 +48,6 @@ const ProductProvider: React.FC<ProductProviderType> = ({children}) => {
         }
     }
 
-
     const getProducts = async () => {
         const res = await fetch(baseUrl)
         setProducts(await res.json())
@@ -71,13 +59,8 @@ const ProductProvider: React.FC<ProductProviderType> = ({children}) => {
         if (take !== 0)
             url +=  `/${take}`
 
-            // console.log(setFeaturedProducts)
-
-
         const res = await fetch(url)
-        setFeaturedProducts(await res.json())
-
-        
+        setFeaturedProducts(await res.json())    
     }
 
     const getProductSection1 = async (take: number = 0) => {
@@ -129,5 +112,3 @@ const ProductProvider: React.FC<ProductProviderType> = ({children}) => {
 }
 
 export default ProductProvider
-
-

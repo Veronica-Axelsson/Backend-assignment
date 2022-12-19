@@ -1,20 +1,20 @@
 // Validation for contact form on contact page
 
-export const submitData = async (url: RequestInfo | URL, method: string, data: string, ContentType = 'application/json') => {
+// export const submitData = async (url: RequestInfo | URL, method: string, data: string, ContentType = 'application/json') => {
     
-    const res = await fetch(url, {
-        method: method,
-        headers: {
-        'Content-Type': ContentType
-        },
-        body: data
-    })
+//     const res = await fetch(url, {
+//         method: method,
+//         headers: {
+//         'Content-Type': ContentType
+//         },
+//         body: data
+//     })
 
-    if (res.status === 200) 
-        return true
+//     if (res.status === 200) 
+//         return true
     
-    return false   
-}
+//     return false   
+// }
 
 export const validateName = (elementName: string, value:string, minLength: number = 2) => {
     if (value.length === 0)

@@ -9,10 +9,9 @@ export interface ProductItem {
     imageName: string
   }
 
-  // -------------------------------------------------------------------  Använda något av uppe eller nere
   export interface  Product {
     tag: string | number | readonly string[] | undefined
-    id: number
+    articleNumber: string
     name: string
     description: string
     category: string

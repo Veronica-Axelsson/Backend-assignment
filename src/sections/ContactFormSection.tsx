@@ -50,18 +50,8 @@ const ContactFormSection: React.FC<FormDataType> = () => {
         setSubmitted(false)
         setFailedSubmit(false)
 
-
-
         if (formData.name !== '' && formData.email !== '' && formData.comments !== '') {
             
-
-                // let json = JSON.stringify({
-                //     name: formData.name, 
-                //     email: formData.email, 
-                //     comments: formData.comments
-                // })
-            
-
                 const result = await fetch('https://win22-webapi.azurewebsites.net/api/contactform', {
                     method: 'post',
                     headers: {

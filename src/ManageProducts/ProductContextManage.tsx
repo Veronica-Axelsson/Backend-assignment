@@ -9,10 +9,10 @@ export interface IProductContext {
     setProductRequest: React.Dispatch<React.SetStateAction<ProductRequest>>
     products: Product[]
     create: (e: React.FormEvent) => void
-    get: (id:number) => void
+    get: (id:string) => void
     getAll: () => void
     update: (e: React.FormEvent) => void
-    remove: (id: number) => void
+    remove: (id: string) => void
 }
 
 export const ProductManageContext = createContext<IProductContext | null>(null)
@@ -20,7 +20,7 @@ export const useProductManageContext = () => { return useContext(ProductManageCo
 
 const ProductManageProvider = ({children} : ProductProviderProps) => {
     const baseUrl = 'http://localhost:5000/api/products'
-    const product_default: Product = { id: 0, tag: '', name: '', description: '', category: '', price:'', rating:'', imageName: '' }
+    const product_default: Product = { articleNumber: '', tag: '', name: '', description: '', category: '', price:'', rating:'', imageName: '' }
     const productRequest_default: ProductRequest = {tag: '', name: '', description: '', category: '', price:'', rating: '', imageName: ''}
 
 
@@ -46,7 +46,7 @@ const ProductManageProvider = ({children} : ProductProviderProps) => {
         }
     }
 
-    const get = async (id:number) => {
+    const get = async (id:string) => {
         const result = await fetch(`${baseUrl}/${id}`)
         if ( result.status === 200)
             setProduct(await result.json())
@@ -61,7 +61,7 @@ const ProductManageProvider = ({children} : ProductProviderProps) => {
     const update = async (e: React.FormEvent) => {
         e.preventDefault()    
 
-        const result = await fetch(`${baseUrl}/${product.id}`, {
+        const result = await fetch(`${baseUrl}/${product.articleNumber}`, {
             method: 'put',
             headers: {
                 'Content-Type': 'application/json'
@@ -73,7 +73,7 @@ const ProductManageProvider = ({children} : ProductProviderProps) => {
             setProduct(await result.json())  
     }
 
-    const remove = async (id: number) => {
+    const remove = async (id: string) => {
         const result = await fetch(`${baseUrl}/${id}`, {
             method: 'delete' 
         })

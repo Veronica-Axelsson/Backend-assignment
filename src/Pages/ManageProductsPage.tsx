@@ -17,7 +17,7 @@ const ManageProductsPage: React.FC = () => {
     
     <CreateForm />
     <ProductList item={''} name={''} tag={''} description={''} category={''} price={0} rating={0} imageName={''} />
-    {/* <UpdateForm /> */}
+    
 
     <FooterSection />
     </>

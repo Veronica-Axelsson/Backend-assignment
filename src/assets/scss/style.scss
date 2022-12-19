@@ -23,5 +23,10 @@
 @import "./sections/ProductSection1";
 @import "./sections/ProductSection2";
 
+// Components
+@import "./components/ListCard";
+@import "./components/CreateProductForm";
+@import "./components//UpdateForms";
 //Views
-@import "./views/NotFound";
+@import "./pages/NotFound";
+@import "./pages/ManageProductsPage";

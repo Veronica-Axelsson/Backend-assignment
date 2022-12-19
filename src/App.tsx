@@ -16,6 +16,7 @@ import ProductProvider from './contexts/ProductContext';
 import { ShoppingCartProvider } from './contexts/ShoppingCartContext';
 import ManageProductsPage from './Pages/ManageProductsPage';
 import ProductManageProvider from './ManageProducts/ProductContextManage';
+import UpdateForm from './ManageProducts/UpdateForms';
 
 const App: React.FC = () => {
 
@@ -28,13 +29,17 @@ const App: React.FC = () => {
         <Route path="/" element={<HomeView />}/>
         <Route path="/categories" element={<CategoriesView/>}/>
         <Route path="/products" element={<ProductsView />}/>
-        <Route path="/products/:articleNumber" element={<ProductDetailsView/>}/>
+        {/* <Route path="/products/:articleNumber" element={<ProductDetailsView/>}/> */}
         <Route path="/contacts" element={<ContactsView/>}/>
         <Route path="/manage" element={<ManageProductsPage />}/>
         <Route path="/Search" element={<SearchView/>}/>
         <Route path="/compare" element={<CompareView/>}/>
         <Route path="/wishlist" element={<WishListView/>}/>
+        <Route path="/updateforms" element={<UpdateForm/>}/>
+        <Route path="/manageproductspage" element={<ManageProductsPage/>}/>
         <Route path="/shoppingcart" element={<ShoppingCartView/>}/>
+        
+
         <Route path="*" element={<NotFoundView/>}/>
       </Routes>
     </ProductManageProvider>

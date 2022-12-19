@@ -2,25 +2,15 @@ import React, { useEffect } from 'react'
 import { ProductManageContext, IProductContext } from '../ManageProducts/ProductContextManage'
 import { ProductItem } from '../models/ProductModel'
 
-interface ProductDetailsType {
-  articleNumber: ProductItem
 
-  tag:string
-  name:string
-  description:string
-  category:string
-  price: number
-  rating:number
-  imageName:string
-}
 
-const ProductDetails: React.FC<ProductDetailsType> = ({articleNumber}) => {
+const ProductDetails: React.FC = ({}) => {
   const {product, get, remove} = React.useContext(ProductManageContext) as IProductContext
 
-  useEffect (() => {
-    get(1)
+  // useEffect (() => {
+  //   get(1)
       
-  }, [])
+  // }, [])
   
   return (
     <section className='product-details'>

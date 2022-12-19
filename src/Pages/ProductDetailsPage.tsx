@@ -6,11 +6,30 @@ import MainMenuSection from '../sections/MainMenuSection'
 import FooterSection from '../sections/FooterSection'
 import { ProductContextType, useProductContext } from '../contexts/ProductContext'
 import BreadcrumbSection from '../sections/BreadcrumbSection'
-import ProductDetails from '../sections/ProductDetails'
+import { ProductManageContext, IProductContext } from '../ManageProducts/ProductContextManage'
+import { ProductItem } from '../models/ProductModel'
 
-const ProductDetailsPage: React.FC = () => {
+interface ProductDetailsType {
+  articleNumber: ProductItem
+
+  tag:string
+  name:string
+  description:string
+  category:string
+  price: number
+  rating:number
+  imageName:string
+}
+
+const ProductDetailsPage: React.FC<ProductDetailsType> = () => {
   const {id} = useParams<string>()
   const ProductContext = useProductContext() as ProductContextType
+  const {product, get, remove} = React.useContext(ProductManageContext) as IProductContext
+
+  // useEffect (() => {
+  //   get(1)
+      
+  // }, [])
   
   useEffect(() => {
     ProductContext.getProduct(id)
@@ -21,7 +40,19 @@ const ProductDetailsPage: React.FC = () => {
     <>
     <MainMenuSection/>
     <BreadcrumbSection parentPage='Products' currentPage={ProductContext.product.name} />
-    {/* <ProductDetails  item={ProductContext.product} /> */}
+
+
+    <section className='product-details'>
+        <div className='container'>
+            <div>
+                <div>Product name: {product.name}</div>
+                <div className='cardBoxBG'></div>
+                <img src={product.imageName} alt="product shot not working"/>
+            </div>
+        </div>
+    </section>
+
+
     <FooterSection/>
   </>
   )
