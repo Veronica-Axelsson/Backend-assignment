@@ -24,10 +24,10 @@ interface ProductDetailsType {
 const ProductDetailsPage: React.FC<ProductDetailsType> = () => {
   const {id} = useParams<string>()
   const ProductContext = useProductContext() as ProductContextType
-  const {product, get, remove} = React.useContext(ProductManageContext) as IProductContext
+  const {product} = React.useContext(ProductManageContext) as IProductContext
 
   // useEffect (() => {
-  //   get(1)
+  //   get("1")
       
   // }, [])
   

@@ -20,7 +20,12 @@ export const useProductManageContext = () => { return useContext(ProductManageCo
 
 const ProductManageProvider = ({children} : ProductProviderProps) => {
     const baseUrl = 'http://localhost:5000/api/products'
-    const product_default: Product = { articleNumber: '', tag: '', name: '', description: '', category: '', price:'', rating:'', imageName: '' }
+    const product_default: Product = {
+        articleNumber: '', tag: '', name: '', description: '', category: '', price: '', rating: '', imageName: '',
+        get: function (id: string | undefined): unknown {
+            throw new Error('Function not implemented.')
+        }
+    }
     const productRequest_default: ProductRequest = {tag: '', name: '', description: '', category: '', price:'', rating: '', imageName: ''}
 
 
@@ -47,7 +52,7 @@ const ProductManageProvider = ({children} : ProductProviderProps) => {
     }
 
     const get = async (id:string) => {
-        const result = await fetch(`${baseUrl}/${id}`)
+        const result = await fetch(`${baseUrl}/product/details/${id}`)
         if ( result.status === 200)
             setProduct(await result.json())
     }
@@ -59,8 +64,8 @@ const ProductManageProvider = ({children} : ProductProviderProps) => {
     }
 
     const update = async (e: React.FormEvent) => {
-        e.preventDefault()    
-
+        e.preventDefault() 
+        
         const result = await fetch(`${baseUrl}/${product.articleNumber}`, {
             method: 'put',
             headers: {
@@ -68,10 +73,25 @@ const ProductManageProvider = ({children} : ProductProviderProps) => {
             },
             body: JSON.stringify(product)
         })
-
-        if (result.status === 200) 
+     
+        if (result.status === 201) 
             setProduct(await result.json())  
+
+            console.log("det gick")
+          
     }
+
+
+    // if (result.status === 201) {
+    //     setProductRequest(productRequest_default)
+    // } else {
+    //     console.log('error')
+    // }
+
+
+
+
+
 
     const remove = async (id: string) => {
         const result = await fetch(`${baseUrl}/${id}`, {
@@ -80,6 +100,7 @@ const ProductManageProvider = ({children} : ProductProviderProps) => {
 
         if (result.status === 204) 
             setProduct(product_default)
+            console.log("Det gick inte")
     }
 
 

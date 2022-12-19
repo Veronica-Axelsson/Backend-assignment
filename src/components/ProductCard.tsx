@@ -33,7 +33,7 @@ const ProductCard: React.FC<ProductCardType> = ({item}) => {
                     </div>
 
                     {/* Quick view button on product image ----------------------------------------------------------------------------*/}
-                    <NavLink to={`/products/${item.name.toLowerCase().replace(/ /gi, "-")}`} className="btn-theme btn-card-theme d-xl-none">
+                    <NavLink to={`/products/${item.articleNumber.toLowerCase().replace(/ /gi, "-")}`} className="btn-theme btn-card-theme d-xl-none">
                         <div className="corner-left"></div>
                         <div className="corner-right"></div>
                         QUICK VIEW

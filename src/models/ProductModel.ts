@@ -10,6 +10,7 @@ export interface ProductItem {
   }
 
   export interface  Product {
+    get(id: string | undefined): unknown
     tag: string | number | readonly string[] | undefined
     articleNumber: string
     name: string

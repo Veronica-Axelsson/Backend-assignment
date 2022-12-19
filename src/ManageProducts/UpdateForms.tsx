@@ -8,13 +8,13 @@ import MainMenuSection from '../sections/MainMenuSection'
 const UpdateForm = () => {
   const navigate = useNavigate()
   const {product, setProduct, update, get} = React.useContext(ProductManageContext) as IProductContext
-  // const [ articleNumber ] = useParams()
+  const { articleNumber } = useParams()
 
-  // useEffect(() => {
-  //   if( articleNumber) {
-  //     get(articleNumber)
-  //   }
-  // }, [])
+  useEffect(() => {
+    if( articleNumber) {
+      get(articleNumber)
+    }
+  }, [])
   
 
     const navigateManageProductsPage = () => {
@@ -29,7 +29,7 @@ const UpdateForm = () => {
       <div className='container'>
         <form onSubmit={update} className='d-grid mb-5'>
           <h3 className='display-6 mb-4'>Update product</h3>
-          <input value={product.tag} onChange={(e) => setProduct ({...product, tag: e.target.value})} type="text" className='form-control py-2 mb-3' placeholder='product._' />
+          <input value={product.tag} onChange={(e) => setProduct ({...product, tag: e.target.value})} type="text" className='form-control py-2 mb-3' placeholder='Enter you product tag...' />
           <input value={product.name} onChange={(e) => setProduct ({...product, name: e.target.value})} type="text" className='form-control py-2 mb-3' placeholder='Enter you product name...' />
           <input value={product.description} onChange={(e) => setProduct ({...product, description: e.target.value})} type="text" className='form-control py-2 mb-3' placeholder='Enter product description...' />
           <input value={product.category} onChange={(e) => setProduct ({...product, category: e.target.value})} type="text" className='form-control py-2 mb-3' placeholder='Enter prodct category...' />

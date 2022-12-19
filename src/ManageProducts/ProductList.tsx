@@ -60,9 +60,9 @@ const ProductList: React.FC<ProductListType> = ({item}) => {
                 {/* <button  onClick={navigateUpdateForms} className="btn-theme">Update</button> */}
 
 
-                {/* <NavLink to={`/updateforms(${product.articleNumber}`}>
+                <NavLink to={`/updateforms/${product.articleNumber}`}>
                   <button className="btn-theme ">Update</button>
-                </NavLink> */}
+                </NavLink>
 
                 {/* <button onClick={() => update(product.articleNumber)} className="btn-theme">Update</button> */}
 
