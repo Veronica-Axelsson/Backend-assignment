@@ -28,5 +28,3 @@ const ProductsPage: React.FC = () => {
 }
 
 export default ProductsPage
-
-//  <BreadcrumbSection currentPage="Products"/>

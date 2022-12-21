@@ -7,16 +7,15 @@ import MainMenuSection from '../sections/MainMenuSection'
 
 const UpdateForm = () => {
   const navigate = useNavigate()
-  const {product, setProduct, update, get} = React.useContext(ProductManageContext) as IProductContext
+  const {product, setProduct, update, getProduct} = React.useContext(ProductManageContext) as IProductContext
   const { articleNumber } = useParams()
 
   useEffect(() => {
     if( articleNumber) {
-      get(articleNumber)
+      getProduct(articleNumber)
     }
   }, [])
   
-
     const navigateManageProductsPage = () => {
       navigate('/manageproductspage')
     }
@@ -43,11 +42,6 @@ const UpdateForm = () => {
       <button  onClick={navigateManageProductsPage} className="btn-theme">Back to manage page</button>
       </div>
     </div>
-
-
-
-
-
     <FooterSection />
     </>
   )

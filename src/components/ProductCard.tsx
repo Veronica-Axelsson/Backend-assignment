@@ -1,10 +1,9 @@
 // Product card
 
-import React from 'react'
+import React, { useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
-// import { useShoppingCartContext } from '../contexts/ShoppingCartContext'
+import { useProductContext, ProductContextType } from '../contexts/ProductContext'
 import { ShoppingCartContextType, useShoppingCartContext } from '../contexts/ShoppingCartContext'
-
 import { ProductItem } from '../models/ProductModel'
 import { currencyFormater } from '../utilities/currencyFormatter'
 
@@ -15,7 +14,12 @@ interface ProductCardType {
 const ProductCard: React.FC<ProductCardType> = ({item}) => {
     const { incrementQuantity } = useShoppingCartContext() as ShoppingCartContextType
 
+    const {product, getProduct} = useProductContext() as ProductContextType
 
+    useEffect(() => {
+      getProduct()
+    }, [])
+    
 
   return (
         <div className="col ">
@@ -33,11 +37,21 @@ const ProductCard: React.FC<ProductCardType> = ({item}) => {
                     </div>
 
                     {/* Quick view button on product image ----------------------------------------------------------------------------*/}
-                    <NavLink to={`/products/${item.articleNumber.toLowerCase().replace(/ /gi, "-")}`} className="btn-theme btn-card-theme d-xl-none">
+                    <NavLink to={`/productdetailspage/${item.articleNumber}`} className="btn-theme btn-card-theme d-xl-none">
                         <div className="corner-left"></div>
                         <div className="corner-right"></div>
                         QUICK VIEW
                     </NavLink>
+                    
+
+{/* ${item.articleNumber.toLowerCase().replace(/ /gi, "-")}` */}
+
+                    {/* <NavLink to={`/updateforms/${product.articleNumber}`}>
+                    <button className="btn-theme ">Update</button>
+                  </NavLink> */}
+
+
+                  
                 </div>
 
                 {/* Text and stars under product image --------------------------------------------------------------------------------*/}

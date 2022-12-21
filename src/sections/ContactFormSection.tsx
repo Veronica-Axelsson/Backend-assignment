@@ -1,6 +1,5 @@
 // Contact form section
 
-// import { stringify } from 'querystring'
 import React, {useState} from 'react'
 import AlertNotification from '../components/AlertNotification'
 import { validateComments, validateEmail, validateName} from '../utilities/validation'
@@ -18,7 +17,6 @@ const ContactFormSection: React.FC<FormDataType> = () => {
     const [errors, setErrors] = useState<FormDataType>(DEFAULT_VALUES)
     const [submitted, setSubmitted] = useState<boolean>(false)
     const [failedSubmit, setFailedSubmit] = useState<boolean>(false)
-
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
         const {id, value} = e.target
@@ -41,12 +39,11 @@ const ContactFormSection: React.FC<FormDataType> = () => {
 
         if (id === 'comments')
             setErrors({...errors, [id]: validateComments(id, value, 5)})
-
     }
-
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault()
+        
         setSubmitted(false)
         setFailedSubmit(false)
 
@@ -70,8 +67,6 @@ const ContactFormSection: React.FC<FormDataType> = () => {
                 }
             }
         }
-
-
 
 
     return (

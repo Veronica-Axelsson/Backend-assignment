@@ -16,7 +16,7 @@ const ManageProductsPage: React.FC = () => {
     <BreadcrumbSection currentPage="ManageProductsPage" />
     
     <CreateForm />
-    <ProductList item={''} name={''} tag={''} description={''} category={''} price={0} rating={0} imageName={''} />
+    <ProductList tag={''} name={''} description={''} category={''} price={0} rating={0} imageName={''}  />
     
 
     <FooterSection />

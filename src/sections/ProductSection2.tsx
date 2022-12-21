@@ -24,11 +24,6 @@ const ProductSection2: React.FC = () => {
           <div className="divide2">
             
             {/* Left side - Products ---------------------------------------------------------*/}
-            {/* <div className='fullwidth'>
-              <div className="colWidth"> */}
-                {/* <div className="">
-                  <ProductGridSection2 title="" items={productSection2} />
-                </div> */}
             <div className="grid2">
               <div className="productSection2">
                 <ProductGridSection2 title="" items={productSection2} />
@@ -38,9 +33,6 @@ const ProductSection2: React.FC = () => {
                 <ProductGridSection2 title="" items={productSection2b} />
               </div>
           </div>
-
-              {/* </div>
-            </div> */}
 
             {/* Right side - Big image --------------------------------------------------------*/}
             <div className="textOnImg ">

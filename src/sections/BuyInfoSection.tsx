@@ -12,6 +12,7 @@ const BuyInfoSection: React.FC = () => {
       <section className="buyInfoSection">
         <img src={divider} className="divider" alt="showcase-img-1"/>
         <div className="container ">
+          
           {/* Buy info - Customer Support ------------------------------*/}
           <div className="buyInfo">
             <div className="circle">
@@ -20,6 +21,7 @@ const BuyInfoSection: React.FC = () => {
             <h3>Customer Support</h3>
             <p>Village did removed enjoyed explain talking.</p>
           </div>
+          
           {/* Buy info - Secured Payment -------------------------------*/}
           <div className="buyInfo __marginL">
             <div className="circle">

@@ -9,7 +9,7 @@ export interface IProductContext {
     setProductRequest: React.Dispatch<React.SetStateAction<ProductRequest>>
     products: Product[]
     create: (e: React.FormEvent) => void
-    get: (id:string) => void
+    getProduct: (id:string) => void
     getAll: () => void
     update: (e: React.FormEvent) => void
     remove: (id: string) => void
@@ -27,7 +27,6 @@ const ProductManageProvider = ({children} : ProductProviderProps) => {
         }
     }
     const productRequest_default: ProductRequest = {tag: '', name: '', description: '', category: '', price:'', rating: '', imageName: ''}
-
 
     const [product, setProduct] = useState<Product>(product_default)
     const [productRequest, setProductRequest] = useState<ProductRequest>(productRequest_default)
@@ -51,10 +50,14 @@ const ProductManageProvider = ({children} : ProductProviderProps) => {
         }
     }
 
-    const get = async (id:string) => {
-        const result = await fetch(`${baseUrl}/product/details/${id}`)
-        if ( result.status === 200)
-            setProduct(await result.json())
+    const getProduct = async (articleNumber:string) => {
+        const result = await fetch(`${baseUrl}/product/details/${articleNumber}`)
+        if ( result.status === 200) {
+            const data = await result.json()
+            // console.log(data)
+
+            setProduct(data)
+        }
     }
 
     const getAll = async () => {
@@ -81,20 +84,8 @@ const ProductManageProvider = ({children} : ProductProviderProps) => {
           
     }
 
-
-    // if (result.status === 201) {
-    //     setProductRequest(productRequest_default)
-    // } else {
-    //     console.log('error')
-    // }
-
-
-
-
-
-
-    const remove = async (id: string) => {
-        const result = await fetch(`${baseUrl}/${id}`, {
+    const remove = async (articleNumber: string) => {
+        const result = await fetch(`${baseUrl}/${articleNumber}`, {
             method: 'delete' 
         })
 
@@ -105,7 +96,7 @@ const ProductManageProvider = ({children} : ProductProviderProps) => {
 
 
   return (
-    <ProductManageContext.Provider value={{product, setProduct, productRequest, setProductRequest, products, create, get, getAll, update, remove}}>
+    <ProductManageContext.Provider value={{product, setProduct, productRequest, setProductRequest, products, create, getProduct, getAll, update, remove}}>
         {children}
     </ProductManageContext.Provider>
   )

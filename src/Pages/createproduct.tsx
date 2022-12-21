@@ -11,7 +11,7 @@ const Search: React.FC = () => {
   return (
     <>
       <MainMenuSection/>
-      <CreateForm />
+      <CreateForm  />
       <FooterSection/>
     </>
   )

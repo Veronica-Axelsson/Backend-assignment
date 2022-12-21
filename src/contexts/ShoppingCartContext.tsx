@@ -20,14 +20,9 @@ export interface ShoppingCartContextType {
 export const ShoppingCartContext = createContext<ShoppingCartContextType | null>(null)
 export const useShoppingCartContext = () => { return useContext(ShoppingCartContext)}
 
-
 export const ShoppingCartProvider: React.FC<ShoppingCartProviderType> = ({children}) => {
     const [items, setItems] = useState<CartItem[]> ([])
     const totalQuantity = items.reduce((quantity, item) => item.quantity + quantity, 0)
-
-    // const getItemQuantity = (articleNumber) => {
-    //     return cartItems.find(item => item.articleNumber === articleNumber)?.quantity || 0
-    // }
 
     const incrementQuantity = (cartItem: CartItem) => {
         const{articleNumber, product} = cartItem
@@ -74,5 +69,3 @@ export const ShoppingCartProvider: React.FC<ShoppingCartProviderType> = ({childr
         <ShoppingCart />
     </ShoppingCartContext.Provider>
 }
-
-// getItemQuantity

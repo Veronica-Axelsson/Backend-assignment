@@ -10,7 +10,6 @@ interface ShoppingCartItemType {
 const ShoppingCartItem: React.FC<ShoppingCartItemType> = ({item}) => {
   const {incrementQuantity, decrementQuantity, removeItem} = useShoppingCartContext() as ShoppingCartContextType
 
-
   return (
     <div className='shoppingcart-item'>
       <div className='item-image'>

@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './style.min.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import HomeView from './Pages/HomePage';
 import CategoriesView from './Pages/CategoriesPage';
 import ProductsView from './Pages/ProductsPage';
-import ProductDetailsView from './Pages/ProductDetailsPage';
+import ProductDetailsPage from './Pages/ProductDetailsPage';
 import ContactsView from './Pages/ContactsPage';
 import SearchView from './Pages/SearchPage';
 import CompareView from './Pages/CategoriesPage';
@@ -15,10 +15,24 @@ import NotFoundView from './Pages/NotFoundPage';
 import ProductProvider from './contexts/ProductContext';
 import { ShoppingCartProvider } from './contexts/ShoppingCartContext';
 import ManageProductsPage from './Pages/ManageProductsPage';
-import ProductManageProvider from './ManageProducts/ProductContextManage';
+import ProductManageProvider, { IProductContext, ProductManageContext } from './ManageProducts/ProductContextManage';
 import UpdateForm from './ManageProducts/UpdateForms';
+import { ProductItem } from './models/ProductModel';
+import ProductDetails from './sections/ProductDetails';
+import ProductDetailsPage2 from './Pages/ProductdetailsPage2';
 
-const App: React.FC = () => {
+interface AppType {
+  articleNumber: ProductItem[]
+  tag: string
+  name: string
+  description: string
+  category: string
+  price: number
+  rating: number
+  imageName: string
+}
+
+const App: React.FC<AppType> = () => {
 
   return (
     <BrowserRouter>
@@ -29,7 +43,7 @@ const App: React.FC = () => {
         <Route path="/" element={<HomeView />}/>
         <Route path="/categories" element={<CategoriesView/>}/>
         <Route path="/products" element={<ProductsView />}/>
-        {/* <Route path="/products/:articleNumber" element={<ProductDetailsView/>}/> */}
+        <Route path="/productdetailspage/:articleNumber" element={<ProductDetailsPage />}/>
         <Route path="/contacts" element={<ContactsView/>}/>
         <Route path="/manage" element={<ManageProductsPage />}/>
         <Route path="/Search" element={<SearchView/>}/>

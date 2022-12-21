@@ -50,11 +50,6 @@ const MainMenuSection: React.FC<MainMenuSectionType> = () => {
             <span className='position-absolute top-0 start-100 translate-middle badge rounded-pill bg-theme'>{totalQuantity}</span>
             <i className="fa-regular fa-bag-shopping"></i></button>
 
-          {/* <NavLink to="/shoppingcart" end className="menuIcon">
-            <i className="fa-regular fa-bag-shopping"></i>
-          </NavLink> */}
-
-
         {/* Mobile toggle menu -------------------------------------------------------------------------------------------------------*/}
             <button onClick={toggleMenu} className="d-lg-none d-xl-none menuIcon btn-menuIcon">
               <i className="fa-regular fa-bars"></i>
@@ -65,6 +60,3 @@ const MainMenuSection: React.FC<MainMenuSectionType> = () => {
 }
 
 export default MainMenuSection
-
-
-

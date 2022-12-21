@@ -32,8 +32,3 @@ const hero: React.FC = () => {
 }
 
 export default hero
-
-
-
-
-

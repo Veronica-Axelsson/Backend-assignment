@@ -23,7 +23,6 @@ export interface ProductItem {
 
 export interface  ProductRequest {
     tag: string | number | readonly string[] | undefined
-    // id: number
     name: string
     description: string
     category: string

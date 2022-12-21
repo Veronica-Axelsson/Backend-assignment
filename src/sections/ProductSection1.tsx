@@ -22,6 +22,7 @@ useEffect(() => {
     <section className="productSection1">
       <div className="container">
         <div className="divide2">
+          
           {/* Left side - Big image --------------------------------------------------------*/}
           <div className="textOnImg ">
             <img className="imgSize" src={Models7} alt="" />

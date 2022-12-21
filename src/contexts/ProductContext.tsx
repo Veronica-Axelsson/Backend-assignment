@@ -28,7 +28,6 @@ export const useProductContext = () => { return useContext(ProductContext) }
 
 
 const ProductProvider: React.FC<ProductProviderType> = ({children}) => {
-    // const baseUrl: string = 'https://win22-webapi.azurewebsites.net/api/products'
     const baseUrl: string = 'http://localhost:5000/api/products'
     const EMPTY_PRODUCT: ProductItem = { tag: '', articleNumber: '', description: '', name: '', category: '', price: 0, rating: '', imageName: ''}
 
@@ -39,7 +38,6 @@ const ProductProvider: React.FC<ProductProviderType> = ({children}) => {
     const [productSection1b, setProductSection1b] = useState<ProductItem[]>([])
     const [productSection2, setProductSection2] = useState<ProductItem[]>([])
     const [productSection2b, setProductSection2b] = useState<ProductItem[]>([])
-
 
     const getProduct = async (articleNumber?: string) => {
         if (articleNumber !== undefined) {

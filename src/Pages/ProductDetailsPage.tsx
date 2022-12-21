@@ -1,60 +1,15 @@
 // Products details page
 
-import React, { useEffect} from 'react'
-import { useParams } from 'react-router-dom'
-import MainMenuSection from '../sections/MainMenuSection'
-import FooterSection from '../sections/FooterSection'
-import { ProductContextType, useProductContext } from '../contexts/ProductContext'
-import BreadcrumbSection from '../sections/BreadcrumbSection'
-import { ProductManageContext, IProductContext } from '../ManageProducts/ProductContextManage'
-import { ProductItem } from '../models/ProductModel'
+import React from 'react'
+import ProductDetailsPage2 from './ProductdetailsPage2'
 
-interface ProductDetailsType {
-  articleNumber: ProductItem
+const ProductDetailsPage: React.FC = () => {
 
-  tag:string
-  name:string
-  description:string
-  category:string
-  price: number
-  rating:number
-  imageName:string
-}
-
-const ProductDetailsPage: React.FC<ProductDetailsType> = () => {
-  const {id} = useParams<string>()
-  const ProductContext = useProductContext() as ProductContextType
-  const {product} = React.useContext(ProductManageContext) as IProductContext
-
-  // useEffect (() => {
-  //   get("1")
-      
-  // }, [])
-  
-  useEffect(() => {
-    ProductContext.getProduct(id)
-  }, [ProductContext, id])
-    
 
   return (
     <>
-    <MainMenuSection/>
-    <BreadcrumbSection parentPage='Products' currentPage={ProductContext.product.name} />
-
-
-    <section className='product-details'>
-        <div className='container'>
-            <div>
-                <div>Product name: {product.name}</div>
-                <div className='cardBoxBG'></div>
-                <img src={product.imageName} alt="product shot not working"/>
-            </div>
-        </div>
-    </section>
-
-
-    <FooterSection/>
-  </>
+    <ProductDetailsPage2 articleNumber={''} tag={''} name={''} description={''} category={''} price={0} rating={0} imageName={''}  />
+    </>
   )
 }
 
