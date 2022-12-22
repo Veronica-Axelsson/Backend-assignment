@@ -2,7 +2,7 @@
 
 import React, {useState} from 'react'
 import AlertNotification from '../components/AlertNotification'
-import { validateComments, validateEmail, validateName} from '../utilities/validation'
+import { submitData, validateComments, validateEmail, validateName} from '../utilities/validation'
 
 interface FormDataType {
     name:string
@@ -17,6 +17,7 @@ const ContactFormSection: React.FC<FormDataType> = () => {
     const [errors, setErrors] = useState<FormDataType>(DEFAULT_VALUES)
     const [submitted, setSubmitted] = useState<boolean>(false)
     const [failedSubmit, setFailedSubmit] = useState<boolean>(false)
+
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
         const {id, value} = e.target
@@ -39,22 +40,33 @@ const ContactFormSection: React.FC<FormDataType> = () => {
 
         if (id === 'comments')
             setErrors({...errors, [id]: validateComments(id, value, 5)})
+
     }
+
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault()
-        
         setSubmitted(false)
         setFailedSubmit(false)
 
+
+
         if (formData.name !== '' && formData.email !== '' && formData.comments !== '') {
             
+
+                let json = JSON.stringify({
+                    name: formData.name, 
+                    email: formData.email, 
+                    comments: formData.comments
+                })
+            
+
                 const result = await fetch('https://win22-webapi.azurewebsites.net/api/contactform', {
                     method: 'post',
                     headers: {
                         'Content-Type': 'application/json'
                     },
-                    body: JSON.stringify(formData)
+                    body: json
                 })
 
 
@@ -67,6 +79,8 @@ const ContactFormSection: React.FC<FormDataType> = () => {
                 }
             }
         }
+
+
 
 
     return (

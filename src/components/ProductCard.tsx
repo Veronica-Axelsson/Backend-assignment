@@ -9,7 +9,7 @@ import { currencyFormater } from '../utilities/currencyFormatter'
 
 interface ProductCardType {
     item: ProductItem
-  }
+}
 
 const ProductCard: React.FC<ProductCardType> = ({item}) => {
     const { incrementQuantity } = useShoppingCartContext() as ShoppingCartContextType
@@ -41,17 +41,7 @@ const ProductCard: React.FC<ProductCardType> = ({item}) => {
                         <div className="corner-left"></div>
                         <div className="corner-right"></div>
                         QUICK VIEW
-                    </NavLink>
-                    
-
-{/* ${item.articleNumber.toLowerCase().replace(/ /gi, "-")}` */}
-
-                    {/* <NavLink to={`/updateforms/${product.articleNumber}`}>
-                    <button className="btn-theme ">Update</button>
-                  </NavLink> */}
-
-
-                  
+                    </NavLink>               
                 </div>
 
                 {/* Text and stars under product image --------------------------------------------------------------------------------*/}

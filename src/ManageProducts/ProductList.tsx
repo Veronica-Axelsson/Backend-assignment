@@ -19,7 +19,6 @@ interface ProductListType {
 
 
 const ProductList: React.FC<ProductListType> = () => {
-    // const navigate = useNavigate()
     const {products, getAll, remove} = React.useContext(ProductManageContext) as IProductContext
 
     useEffect (() => {
@@ -27,14 +26,10 @@ const ProductList: React.FC<ProductListType> = () => {
         
     }, [getAll])
 
-  // const navigateUpdateForms = () => {
-  //   navigate(`/updateforms`)
-  // }
-
   return (
     <>
     <div className='listCard'>
-    <h3 className='display-6 mb-4'>List of products</h3>
+      <h3 className='display-6 mb-4'>List of products</h3>
       <div className='container'>
           {
             products.map((product: Product) => (

@@ -54,7 +54,6 @@ const ProductManageProvider = ({children} : ProductProviderProps) => {
         const result = await fetch(`${baseUrl}/product/details/${articleNumber}`)
         if ( result.status === 200) {
             const data = await result.json()
-            // console.log(data)
 
             setProduct(data)
         }
